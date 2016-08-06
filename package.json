@@ -12,6 +12,7 @@
   "devDependencies": {
     "bower": "^1.7.9",
     "gulp-concat": "^2.6.0",
+    "gulp-inject": "^4.1.0",
     "gulp-minify-css": "^0.3.13",
     "gulp-sass": "^2.3.2",
     "gulp-util": "^2.2.14",
@@ -25,5 +26,7 @@
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard"
   ],
-  "cordovaPlatforms": []
+  "cordovaPlatforms": [
+    "android"
+  ]
 }
