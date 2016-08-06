@@ -1,8 +1,9 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
     <h2 class='aquaberry ion ionicons ion-android-bus'> {{greet}}</h2>
+    <p>{{busRoutes[116].rName}}</p>
     <p >Sometimes there are buses, and sometimes we want to be in the same place as the bus at the same time. This should help. </p>
-    <h4>Arrival of the next __ bus at __ stop:</h4>
+    <h4>Arrival of the next __ bus at stop __:</h4>
     <h3 ng-repeat="eta in etas track by $index"> Minutes: {{eta}}
     </h3>
     <div class="text-center warning" ng-show="nextEta<alarmingTime">
