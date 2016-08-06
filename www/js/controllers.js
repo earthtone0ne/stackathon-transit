@@ -9,9 +9,20 @@ angular.module('starter.controllers', [])
 
   var url = '/apiNJT/getStopPredictionsETA.jsp?route=190&stop=27175';
   $http.get(url)
-    .then(function (data) {
-      console.log('herebedata',data);
-      $scope.otherYeh = data;
+    .then(function (response) {
+      var parser = new DOMParser();
+      var parsedRes = parser.parseFromString(response.data, "text/xml");
+      var times = parsedRes.getElementsByTagName("pt");
+      var text = parsedRes.getElementsByTagName("pu");
+      var result =[];
+      for (var i = 0; i<times.length; i++){
+        if (isNaN(+times[i].innerHTML)){
+          result.push(text[i].innerHTML)
+        } else {
+          result.push(times[i].innerHTML)
+        }
+      }
+      $scope.otherYeh = result;
     })
     .catch(function(err){console.log(JSON.stringify(err));
     });
@@ -24,7 +35,8 @@ angular.module('starter.controllers', [])
       var url = '//mybusnow.njtransit.com/bustime/eta/getStopPredictionsETA.jsp?route='+route +'&stop=' + stop;
       $http.get(url)
       .then(function (data) {
-        console.log('herebedata',data);
+
+
         return data;
       })
       .catch(function(err){console.log(JSON.stringify(err));});
