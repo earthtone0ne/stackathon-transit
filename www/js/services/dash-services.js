@@ -23,10 +23,11 @@ app.factory('DashFactory', function($http){
       .catch(function(err){console.log(JSON.stringify(err));});
     },
 
-    getDirs: function(route, dir) {
+    getDirs: function(route, dirName) {
+      console.log('getdirs dirname:'+ dirName, 'route:' +route );
       var url = '/apiNJTmap/getDirectionsStopsForRoute.jsp?route='+route;
-      if (dir){url+= '&direction='+encodeURIComponent(dir)}
-      console.log('29 stopname', dir);
+      if (dirName){url+= '&direction='+encodeURIComponent(dirName)}
+
       return $http.get(url)
       .then(function(response){
         var parsedRes= xmlParse(response.data);
@@ -35,7 +36,8 @@ app.factory('DashFactory', function($http){
         var dirIndex= 0;
         result.dirs = [elemArray[0].firstChild.nextSibling.innerHTML,
           elemArray[1].firstChild.nextSibling.innerHTML];
-        if (result.dirs[1] === dir){ dirIndex = 1;}
+        // console.log('resultdirs1',result.dirs[1]) //confirmed dirName
+        if (result.dirs[1] === dirName){ dirIndex = 1;}
         result.stops[0] = stopsParse(elemArray[dirIndex]);
         return result;
       })
@@ -53,7 +55,7 @@ app.factory('DashFactory', function($http){
     var stops = [];
     var nameArray=inputArray.getElementsByTagName('name');
     var idArray=inputArray.getElementsByTagName('id');
-    console.log(idArray[0].innerHTML)
+    // console.log(idArray[0].innerHTML)
     for (var i = 1; i < nameArray.length; i++) {
       stops.push({name: nameArray[i].innerHTML, id: idArray[i-1].innerHTML});
       }

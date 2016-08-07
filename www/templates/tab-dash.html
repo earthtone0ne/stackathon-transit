@@ -20,7 +20,7 @@
     <h4>Arrival of the next #{{selectedRoute.num || "__"}} bus to {{selectedDir || '__'}} at stop {{stopId || '__'}}:</h4>
     <h3 ng-repeat="eta in etas track by $index"> {{eta}} <span ng-hide="isNaN(+eta)">Minute<span ng-show="+eta>1">s</span></span>
     </h3>
-    <div class="text-center warning" ng-show="nextEta<alarmingTime">
+    <div class="text-center warning" ng-show="etas.nextEta<alarmingTime">
       <h2>LEAVE NOW!</h2>
     </div>
   </ion-content>
