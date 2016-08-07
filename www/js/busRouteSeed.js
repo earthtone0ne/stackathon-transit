@@ -3,8 +3,8 @@ function initialRouteSeeder() {
   var makeARoute;
   var routes=[];
   var RouteMaker = function(rn, rn2, rStr, mode) {
-    this.rn= rn;
-    this.rName = rStr;
+    this.num = rn;
+    this.name = rStr;
     this.mode = mode;
   };
   function addRoute(rte){
