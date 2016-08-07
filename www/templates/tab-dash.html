@@ -2,21 +2,22 @@
   <ion-content class="padding">
     <h2 class='ion ionicons ion-android-bus'> {{greet}}</h2>
      <p><small>Because buses are a thing, and sometimes you want to be in the same place as a bus, at the same time.</small></p>
-    <label class="row item item-input item-select">
-      <div class="input-label"> Route:</div>
-      <select ng-options="route as route.name for route in busRoutes track by route.name" ng-model="selectedRoute" ng-change="routeSelected(selectedRoute)"></select>
-    </label>
+     <div class="list list-inset">
+      <label class="row item item-input item-select">
+        <div class="input-label"> Route:</div>
+        <select ng-options="route as route.name for route in busRoutes track by route.name" ng-model="selectedRoute" ng-change="routeSelected(selectedRoute)"></select>
+      </label>
 
-    <div ng-show="selectedRoute" >
-      <button ng-click="dirSelected(dirs[0])">{{dirs[0]}}</button>
-      <button ng-click="dirSelected(dirs[1])">{{dirs[1]}}</button>
+      <div ng-show="selectedRoute" class="item">
+        <button ng-click="dirSelected(dirs[0])">{{dirs[0]}}</button>
+        <button ng-click="dirSelected(dirs[1])">{{dirs[1]}}</button>
+      </div>
+
+      <label class="item item-input item-select" ng-show="selectedDir">
+        <div class="input-label"> Stop:</div>
+        <select ng-options="stop as stop.name for stop in stops track by stop.name" ng-model="selectedStop" ng-change="stopSelected(selectedStop)"></select>
+      </label>
     </div>
-
-    <label class="item item-input item-select" ng-show="selectedDir">
-      <div class="input-label"> Stop:</div>
-      <select ng-options="stop as stop.name for stop in stops track by stop.name" ng-model="selectedStop" ng-change="stopSelected(selectedStop)"></select>
-    </label>
-
     <h4>Arrival of the next #{{selectedRoute.num || "__"}} bus to {{selectedDir || '__'}} at stop {{stopId || '__'}}:</h4>
     <h3 ng-repeat="eta in etas track by $index"> {{eta}} <span ng-hide="isNaN(+eta)">Minute<span ng-show="+eta>1">s</span></span>
     </h3>
