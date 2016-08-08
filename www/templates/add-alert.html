@@ -1,8 +1,31 @@
 <ion-view view-title="Alerts">
   <ion-content class="padding">
-    <div class="top50px"><h1>Hello!</h1></div>
-    <p>
-      thing.
-    </p>
+    <div class=""><br></div>
+    <h4 class="text-center">{{time}}</h4>
+    <h5 class="text-center">{{date}}</h5>
+    <button class="button button-block button-balanced"
+      ng-click="addAlert()" ng-hide="loggedInUser">Add Alert</button>
+
+    <div class="list list-inset" ng-show="addMsg">
+      <label class="row item item-input item-select">
+        <div class="input-label"> Route:</div>
+        <select ng-options="route as route.name for route in busRoutes track by route.name" ng-model="selectedRoute" ng-change="routeSelected(selectedRoute)"></select>
+      </label>
+
+      <div ng-show="selectedRoute" class="item" id="dir-buttons">
+        <button ng-click="dirSelected(dirs[0])" ng-class="{'positive': dirs[0]===selectedDir}">{{dirs[0]}}</button>
+        <button ng-click="dirSelected(dirs[1])" ng-class="{'positive': dirs[1]===selectedDir}">{{dirs[1]}}</button>
+      </div>
+    </div>
+      <h3>Alerts</h3>
+      <ion-list ng-repeat="alert in alerts">{{alert.route}} - {{alert.dir}} - Stop {{alert.stop}}
+        <ion-toggle ng-model="alert.active" >{{alert.start}} - {{alert.end}}, {{alert.interval}} Minute Alert</ion-toggle>
+      </ion-list>
+      <label class="item item-input item-select" ng-show="selectedDir">
+        <div class="input-label"> Stop:</div>
+        <select ng-options="stop as stop.name for stop in stops track by stop.name" ng-model="selectedStop" ng-change="stopSelected(selectedStop)"></select>
+      </label>
+
+
   </ion-content>
 </ion-view>

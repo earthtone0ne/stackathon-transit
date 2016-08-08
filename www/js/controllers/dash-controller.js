@@ -1,6 +1,6 @@
 app.controller('DashCtrl', function($scope,DashFactory) {
   $scope.busRoutes = initialRouteSeeder();
-  $scope.alarmingTime = 10;
+  $scope.alarmingTime = 4;
   $scope.stopId = null;
 
   $scope.getEtaData = function() {
@@ -43,7 +43,6 @@ app.controller('DashCtrl', function($scope,DashFactory) {
     $scope.getDirs();
   };
   $scope.stopSelected= function(stop){
-    console.log('stop picked', stop.name, stop.id, 'dir:'+ $scope.selectedDir)
     $scope.selectedStop = stop;
     $scope.stopId=stop.id;
     $scope.getEtaData($scope.route, $scope.stopId)

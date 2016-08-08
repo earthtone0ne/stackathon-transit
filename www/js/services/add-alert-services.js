@@ -10,7 +10,8 @@ app.factory('AlertFactory', function() {
     dir: 'New York',
     start: '8:00',
     end: '8:30',
-    interval: '5'
+    interval: '4',
+    active: true
 
   }];
 
