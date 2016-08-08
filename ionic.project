@@ -5,5 +5,10 @@
   {
     "path": "/apiNJT",
     "proxyUrl": "http://mybusnow.njtransit.com/bustime/eta"
-  }]
+  },
+  {
+    "path": "/apiNJTmap",
+    "proxyUrl": "http://mybusnow.njtransit.com/bustime/map"
+  }
+  ]
 }
