@@ -1,17 +1,19 @@
 <ion-view view-title="Account">
   <ion-content>
-   <div class="list list-inset" ng-hide="loggedInUser">
-          <label class="item item-input">
-              <input type="text" placeholder="User name" ng-model="login.username">
-          </label>
-          <label class="item item-input">
-              <input type="password" placeholder="Password" ng-model="login.password">
-          </label>
-      </div>
-      <button class="button button-block button-calm"
-        ng-click="login()" ng-hide="loggedInUser">Login</button>
-      <button class="button button-block button-positive"
-        ng-click="logout()" ng-show="loggedInUser">Log Out</button>
+
+    <div class="list list-inset" ng-hide="loggedInUser">
+      <label class="item item-input">
+          <input type="text" placeholder="User name" ng-model="login.username">
+      </label>
+      <label class="item item-input">
+          <input type="password" placeholder="Password" ng-model="login.password">
+      </label>
+    </div>
+
+    <button class="button button-block button-calm"
+      ng-click="login()" ng-hide="loggedInUser">Login</button>
+    <button class="button button-block button-positive"
+      ng-click="logout()" ng-show="loggedInUser">Log Out</button>
 
     <div class="padding" ng-show="loggedInUser">
       <h3>Saved Searches</h3>
