@@ -67,7 +67,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-
+  .state('tab.alerts', {
+    url: '/alerts',
+    views: {
+      'add-alert': {
+        templateUrl: 'templates/add-alert.html',
+        controller: 'AddAlertCtrl'
+      }
+    }
+  })
   .state('tab.account', {
     url: '/account',
     views: {

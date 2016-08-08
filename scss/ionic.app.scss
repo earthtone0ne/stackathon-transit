@@ -35,6 +35,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   background-color: #eff6f6;
 }
 
+.top50px {
+  margin-top: 50px;
+}
+
 // Include all of Ionic
 @import "../www/lib/ionic/scss/ionic";
 

@@ -23,14 +23,15 @@ $dark:                            #444 !default;
     margin-left: 1%;
     padding-left: 1%;
     padding-right: 1%; }
-    #dir-buttons button .chosen {
-      color: #eee; }
 
 .aquaberry {
   color: #229399; }
 
 .aquaberry-light {
   background-color: #eff6f6; }
+
+.top50px {
+  margin-top: 50px; }
 
 /*!
   Ionicons, v2.0.1
