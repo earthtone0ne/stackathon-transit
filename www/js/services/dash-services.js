@@ -1,16 +1,23 @@
 app.factory('DashFactory', function($http){
   return {
     getEtaData: function(route, stop){
-      var url = '/apiNJT/getStopPredictionsETA.jsp?route='+route +'&stop=' + stop;
-
+      var url = '/apiNJT/getStopPredictionsETA.jsp?';
+      if (route) {
+        url += 'route='+route
+        if (stop) {url+='&'}
+      }
+      if (stop) {url+= 'stop=' + stop;}
       return $http.get(url)
       .then(function (response) {
+        console.log('response cookies? ' + response.headers() || 'no')
         if (!response.data) {throw new Error(response.status);}
         var parsedRes =xmlParse(response.data);
         // console.log('etas: ',JSON.stringify(response.data));
         var times = parsedRes.getElementsByTagName('pt');
+        if (!times.length) {return []}
         var text = parsedRes.getElementsByTagName('pu');
         var etaList =[];
+        etaList.route = route || parsedRes.getElementsByTagName('rn')[0];
         for (var i = 0; i<times.length; i++){
           if (isNaN(+times[i].innerHTML)){
             etaList.push(text[i].innerHTML);

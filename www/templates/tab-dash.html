@@ -1,8 +1,15 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
-    <h2 class='ion ionicons ion-android-bus'> {{greet}}</h2>
+    <h2 class='ion ionicons ion-android-bus'> Buses are a thing!</h2>
      <p><small>Because buses are a thing, and sometimes you want to be in the same place as a bus, at the same time.</small></p>
      <div class="list list-inset">
+      <form ng-submit="getEtaData()">
+        <label class="row item item-input item-select">
+          <div class="input-label"> I know my stop ID:</div>
+          <input type="text" ng-model="stopId" >
+          <button type="submit">Go</button>
+        </label>
+      </form>
       <label class="row item item-input item-select">
         <div class="input-label"> Route:</div>
         <select ng-options="route as route.name for route in busRoutes track by route.name" ng-model="selectedRoute" ng-change="routeSelected(selectedRoute)"></select>
@@ -18,10 +25,11 @@
         <select ng-options="stop as stop.name for stop in stops track by stop.name" ng-model="selectedStop" ng-change="stopSelected(selectedStop)"></select>
       </label>
     </div>
+
     <h4>Arrival of the next #{{selectedRoute.num || "__"}} bus to {{selectedDir || '__'}} at stop {{stopId || '__'}}:</h4>
     <h3 ng-repeat="eta in etas track by $index"> {{eta}} <span ng-hide="isNaN(+eta)">Minute<span ng-show="+eta>1">s</span></span>
     </h3>
-    <div class="text-center warning" ng-show="etas.nextEta<alarmingTime">
+    <div class="text-center warning" ng-show="etas.nextEta < alarmingTime">
       <h2>LEAVE NOW!</h2>
     </div>
   </ion-content>
