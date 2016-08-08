@@ -1,8 +1,6 @@
-app.controller('DashCtrl', function($scope,DashFactory,$http) {
+app.controller('DashCtrl', function($scope,DashFactory) {
   $scope.busRoutes = initialRouteSeeder();
-  $scope.greet = 'Let\'s go bussin\'!';
   $scope.alarmingTime = 10;
-  // $scope.nextEta = $scope.alarmingTime +1;
   $scope.stopId = null;
 
   $scope.getEtaData = function() {

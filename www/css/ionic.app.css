@@ -15,6 +15,23 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+#dir-buttons {
+  background-color: #3fa1a6;
+  font-size: 2em; }
+  #dir-buttons button {
+    width: 47%;
+    margin-left: 1%;
+    padding-left: 1%;
+    padding-right: 1%; }
+    #dir-buttons button .chosen {
+      color: #eee; }
+
+.aquaberry {
+  color: #229399; }
+
+.aquaberry-light {
+  background-color: #eff6f6; }
+
 /*!
   Ionicons, v2.0.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
@@ -9814,6 +9831,3 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
-
-.aquaberry {
-  color: #229399; }

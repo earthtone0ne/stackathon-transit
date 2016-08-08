@@ -1,6 +1,6 @@
-<ion-view view-title="Dashboard">
-  <ion-content class="padding">
-    <h2 class='ion ionicons ion-android-bus'> {{greet}}</h2>
+<ion-view view-title="Dashboard" >
+  <ion-content class="padding aquaberry-light"">
+    <h2 class='ion ionicons ion-android-bus aquaberry'> Buses are a thing!</h2>
      <p><small>Because buses are a thing, and sometimes you want to be in the same place as a bus, at the same time.</small></p>
      <div class="list list-inset">
       <label class="row item item-input item-select">
@@ -8,9 +8,9 @@
         <select ng-options="route as route.name for route in busRoutes track by route.name" ng-model="selectedRoute" ng-change="routeSelected(selectedRoute)"></select>
       </label>
 
-      <div ng-show="selectedRoute" class="item">
-        <button ng-click="dirSelected(dirs[0])">{{dirs[0]}}</button>
-        <button ng-click="dirSelected(dirs[1])">{{dirs[1]}}</button>
+      <div ng-show="selectedRoute" class="item" id="dir-buttons">
+        <button ng-click="dirSelected(dirs[0])" ng-class="{'positive': dirs[0]===selectedDir}">{{dirs[0]}}</button>
+        <button ng-click="dirSelected(dirs[1])" ng-class="{'positive': dirs[1]===selectedDir}">{{dirs[1]}}</button>
       </div>
 
       <label class="item item-input item-select" ng-show="selectedDir">
