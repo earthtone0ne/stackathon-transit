@@ -18,9 +18,11 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+<script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
+    <!-- Cordova is bootstrapped by ionic-platform-web-client, uncomment this if you remove ionic-platform-web-client... -->
+<!-- <script src="cordova.js"></script> -->
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
@@ -48,12 +50,6 @@
     <script src="js/www/lib/angular-moment/karma.conf.js"></script>
     <script src="js/www/lib/angular-moment/tests.js"></script>
     <script src="js/www/lib/moment/moment.js"></script>
-    <script src="js/www/lib/moment/min/locales.js"></script>
-    <script src="js/www/lib/moment/min/locales.min.js"></script>
-    <script src="js/www/lib/moment/min/moment-with-locales.js"></script>
-    <script src="js/www/lib/moment/min/moment-with-locales.min.js"></script>
-    <script src="js/www/lib/moment/min/moment.min.js"></script>
-    <script src="js/www/lib/moment/min/tests.js"></script>
     <script src="js/www/lib/moment/src/moment.js"></script>
     <script src="js/www/lib/moment/locale/af.js"></script>
     <script src="js/www/lib/moment/locale/ar-ma.js"></script>
@@ -140,6 +136,12 @@
     <script src="js/www/lib/moment/locale/vi.js"></script>
     <script src="js/www/lib/moment/locale/zh-cn.js"></script>
     <script src="js/www/lib/moment/locale/zh-tw.js"></script>
+    <script src="js/www/lib/moment/min/locales.js"></script>
+    <script src="js/www/lib/moment/min/locales.min.js"></script>
+    <script src="js/www/lib/moment/min/moment-with-locales.js"></script>
+    <script src="js/www/lib/moment/min/moment-with-locales.min.js"></script>
+    <script src="js/www/lib/moment/min/moment.min.js"></script>
+    <script src="js/www/lib/moment/min/tests.js"></script>
     <script src="js/www/lib/moment/templates/amd-named.js"></script>
     <script src="js/www/lib/moment/templates/amd.js"></script>
     <script src="js/www/lib/moment/templates/globals.js"></script>
@@ -256,19 +258,6 @@
     <script src="js/www/lib/moment/src/lib/locale/relative.js"></script>
     <script src="js/www/lib/moment/src/lib/locale/set.js"></script>
     <script src="js/www/lib/moment/src/lib/format/format.js"></script>
-    <script src="js/www/lib/moment/src/lib/duration/abs.js"></script>
-    <script src="js/www/lib/moment/src/lib/duration/add-subtract.js"></script>
-    <script src="js/www/lib/moment/src/lib/duration/as.js"></script>
-    <script src="js/www/lib/moment/src/lib/duration/bubble.js"></script>
-    <script src="js/www/lib/moment/src/lib/duration/constructor.js"></script>
-    <script src="js/www/lib/moment/src/lib/duration/create.js"></script>
-    <script src="js/www/lib/moment/src/lib/duration/duration.js"></script>
-    <script src="js/www/lib/moment/src/lib/duration/get.js"></script>
-    <script src="js/www/lib/moment/src/lib/duration/humanize.js"></script>
-    <script src="js/www/lib/moment/src/lib/duration/iso-string.js"></script>
-    <script src="js/www/lib/moment/src/lib/duration/prototype.js"></script>
-    <script src="js/www/lib/moment/src/lib/parse/regex.js"></script>
-    <script src="js/www/lib/moment/src/lib/parse/token.js"></script>
     <script src="js/www/lib/moment/src/lib/moment/add-subtract.js"></script>
     <script src="js/www/lib/moment/src/lib/moment/calendar.js"></script>
     <script src="js/www/lib/moment/src/lib/moment/clone.js"></script>
@@ -286,6 +275,8 @@
     <script src="js/www/lib/moment/src/lib/moment/to-type.js"></script>
     <script src="js/www/lib/moment/src/lib/moment/to.js"></script>
     <script src="js/www/lib/moment/src/lib/moment/valid.js"></script>
+    <script src="js/www/lib/moment/src/lib/parse/regex.js"></script>
+    <script src="js/www/lib/moment/src/lib/parse/token.js"></script>
     <script src="js/www/lib/moment/src/lib/units/aliases.js"></script>
     <script src="js/www/lib/moment/src/lib/units/constants.js"></script>
     <script src="js/www/lib/moment/src/lib/units/day-of-month.js"></script>
@@ -317,6 +308,17 @@
     <script src="js/www/lib/moment/src/lib/utils/map.js"></script>
     <script src="js/www/lib/moment/src/lib/utils/to-int.js"></script>
     <script src="js/www/lib/moment/src/lib/utils/zero-fill.js"></script>
+    <script src="js/www/lib/moment/src/lib/duration/abs.js"></script>
+    <script src="js/www/lib/moment/src/lib/duration/add-subtract.js"></script>
+    <script src="js/www/lib/moment/src/lib/duration/as.js"></script>
+    <script src="js/www/lib/moment/src/lib/duration/bubble.js"></script>
+    <script src="js/www/lib/moment/src/lib/duration/constructor.js"></script>
+    <script src="js/www/lib/moment/src/lib/duration/create.js"></script>
+    <script src="js/www/lib/moment/src/lib/duration/duration.js"></script>
+    <script src="js/www/lib/moment/src/lib/duration/get.js"></script>
+    <script src="js/www/lib/moment/src/lib/duration/humanize.js"></script>
+    <script src="js/www/lib/moment/src/lib/duration/iso-string.js"></script>
+    <script src="js/www/lib/moment/src/lib/duration/prototype.js"></script>
     <!-- endinject -->
   </head>
   <body ng-app="starter">

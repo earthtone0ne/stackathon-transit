@@ -5,7 +5,7 @@ app.controller('AccountCtrl', function($scope, $ionicPopup) {
   $scope.user = {username: 'Stephanie', password: '123' }
 
   $scope.login = function(){
-    if ($scope.user.username === $scope.login.username &&
+    if ($scope.user.username.toLowerCase() === $scope.login.username.toLowerCase() &&
         $scope.user.password === $scope.login.password){
       $scope.loggedInUser = $scope.user;
     }
