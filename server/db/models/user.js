@@ -1,9 +1,9 @@
 'use strict';
-var crypto = require('crypto');
-var _ = require('lodash');
-var Sequelize = require('sequelize');
+const crypto = require('crypto');
+const _ = require('lodash');
+const Sequelize = require('sequelize');
 
-var db = require('../_db');
+const db = require('../_db');
 
 module.exports = db.define('user', {
     email: {
@@ -23,9 +23,6 @@ module.exports = db.define('user', {
         defaultValue: false
     },
     salt: {
-        type: Sequelize.STRING
-    },
-    twitter_id: {
         type: Sequelize.STRING
     },
     facebook_id: {
@@ -48,7 +45,7 @@ module.exports = db.define('user', {
             return crypto.randomBytes(16).toString('base64');
         },
         encryptPassword: function (plainText, salt) {
-            var hash = crypto.createHash('sha1');
+            let hash = crypto.createHash('sha1');
             hash.update(plainText);
             hash.update(salt);
             return hash.digest('hex');
@@ -63,4 +60,3 @@ module.exports = db.define('user', {
         }
     }
 });
-

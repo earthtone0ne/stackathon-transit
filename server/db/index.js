@@ -2,7 +2,8 @@
 var db = require('./_db');
 var User = require('./models/user');
 var Alert = require('./models/alert');
-var Favorite = require('./models/review');
+var Favorite = require('./models/favorite');
+var Stop = require('./models/stop');
 
 Alert.belongsTo(User);
 User.hasMany(Alert);
@@ -10,5 +11,7 @@ User.hasMany(Alert);
 Favorite.belongsTo(User);
 User.hasMany(Favorite);
 
-module.exports=db;
+Stop.belongsTo(Alert);
+Stop.belongsTo(Favorite);
 
+module.exports=db;
