@@ -1,8 +1,8 @@
 <ion-view view-title="Alerts">
   <ion-content class="padding">
     <div class=""><br></div>
-    <h4 class="text-center">{{time}}</h4>
-    <h5 class="text-center">{{date}}</h5>
+    <h4 class="text-center">{{currDate | date : "h:mm a"}}</h4>
+    <h5 class="text-center">{{currDate | date : "d/M/yyyy"}}</h5>
     <button class="button button-block button-balanced"
       ng-click="addAlert()" ng-hide="loggedInUser">Add Alert</button>
 
