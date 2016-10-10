@@ -15,15 +15,7 @@ app.controller('AddAlertCtrl', function($scope, AlertFactory, DashFactory, Clock
 
 // Display the month, day, and year.
   $scope.currDate=new Date();
-  var month = $scope.currDate.getMonth()+1;
-  var today = $scope.currDate.getDate();
-  var year = $scope.currDate.getFullYear();
-  var mins = ('0' + $scope.currDate.getMinutes()).slice(-2);
-  var time = $scope.currDate.getHours() + ":" + mins;
-  console.log('date', $scope.currDate, 'time', $scope.time)
-  $scope.time = time;
-  $scope.day = $scope.currDate.getDay();
-  $scope.date  = month + '-' + today + '-' + year;
+  
 });
 
 
@@ -33,4 +25,3 @@ app.controller('AlertDetailCtrl', function($scope, $stateParams, AlertFactory) {
 
   // $scope.datetime = ClockSvc.getNow()
   // console.log('dt',$scope.datetime)
-
