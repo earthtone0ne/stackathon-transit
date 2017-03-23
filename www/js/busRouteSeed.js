@@ -1,252 +1,256 @@
 function initialRouteSeeder() {
-  let routes=[];
-  let RouteMaker = function(num, name, mode) {
+
+  let RouteMaker = function([num, name, mode =1]) {
+
     return {num, name, mode};
   };
 
-  routes.push( new RouteMaker( '1', 'Newark',  1));
-  routes.push( new RouteMaker( '2', 'Jersey City-JournalSq-Secaucus', 1));
-  routes.push( new RouteMaker( '5', 'Kinney', 1));
-  routes.push( new RouteMaker( '6', 'Ocean Avenue - Journal Square', 1));
-  routes.push( new RouteMaker( '10', 'Bayonne - Jersey City', 1));
-  routes.push( new RouteMaker( '11', 'Newark - Willowbrook', 1));
-  routes.push( new RouteMaker( '13', 'Broad Street - Clinton Avenue', 1));
-  routes.push( new RouteMaker( '21', 'Main Street', 1));
-  routes.push( new RouteMaker( '22', 'N Bergen-Union City-Hoboken', 1));
-  routes.push( new RouteMaker( '23', 'N Bergen-Weehawken-Hoboken', 1));
-  routes.push( new RouteMaker( '25', 'Springfield Avenue', 1));
-  routes.push( new RouteMaker( '26', 'Irvington - Elizabeth', 1));
-  routes.push( new RouteMaker( '27', 'Mount Prospect', 1));
-  routes.push( new RouteMaker( '28', 'Nwk-MontclairUniv-Willowbrook', 1));
-  routes.push( new RouteMaker( '29', 'Bloomfield Avenue', 1));
-  routes.push( new RouteMaker( '30', 'North Arlington-Kearny-Newark', 1));
-  routes.push( new RouteMaker( '34', 'Market Street', 1));
-  routes.push( new RouteMaker( '37', 'Lyons Avenue', 1));
-  routes.push( new RouteMaker( '39', 'Irvington - Newark', 1));
-  routes.push( new RouteMaker( '40', 'Kearny - Jersey Gardens', 1));
-  routes.push( new RouteMaker( '41', 'Park Avenue', 1));
-  routes.push( new RouteMaker( '48', 'Elizabeth-Woodbridge-Perth Am', 1));
-  routes.push( new RouteMaker( '52', 'Morris Avenue', 1));
-  routes.push( new RouteMaker( '56', 'Elizabeth - Winfield', 1));
-  routes.push( new RouteMaker( '57', 'Tremley', 1));
-  routes.push( new RouteMaker( '58', 'Elizabeth - Kenilworth', 1));
-  routes.push( new RouteMaker( '59', 'Plainfield - Newark', 1));
-  routes.push( new RouteMaker( '62', 'Newark-Nwk Airport-Elizabeth', 1));
-  routes.push( new RouteMaker( '63', 'Lakewood-JrsyCity-Weehawken X', 1));
-  routes.push( new RouteMaker( '64', 'Lakewood-Jersey City-Weehawke', 1));
-  routes.push( new RouteMaker( '65', 'Newark - Somerville', 1));
-  routes.push( new RouteMaker( '66', 'Newark - Mountainside', 1));
-  routes.push( new RouteMaker( '67', 'Toms River-Lakewood-Newark', 1));
-  routes.push( new RouteMaker( '68', 'OldBridge-EBrunswick-JerseyC', 1));
-  routes.push( new RouteMaker( '70', 'Newark - Livingston Mall', 1));
-  routes.push( new RouteMaker( '71', 'Newark-West Caldwell', 1));
-  routes.push( new RouteMaker( '72', 'Paterson-Bloomfield-Newark', 1));
-  routes.push( new RouteMaker( '73', 'Newark - Orange - Livingston', 1));
-  routes.push( new RouteMaker( '74', 'Paterson - Nutley - Newark', 1));
-  routes.push( new RouteMaker( '76', 'Newark - Hackensack', 1));
-  routes.push( new RouteMaker( '78', 'Newark - Secaucus', 1));
-  routes.push( new RouteMaker( '79', 'Newark - Parsippany Express', 1));
-  routes.push( new RouteMaker( '80', 'Greenville-JournalSq-Exchange', 1));
-  routes.push( new RouteMaker( '81', 'Bayonne - Jersey City', 1));
-  routes.push( new RouteMaker( '82', 'Union City-Jersy City-Exch Pl', 1));
-  routes.push( new RouteMaker( '83', 'Hackensack-Jersy City-JournSQ', 1));
-  routes.push( new RouteMaker( '84', 'N Bergen-Jersey City-JournSq', 1));
-  routes.push( new RouteMaker( '85', 'Mill Crk-HarmonMeadow-Hbken', 1));
-  routes.push( new RouteMaker( '86', 'Union City-JersyCity-NwprtMal', 1));
-  routes.push( new RouteMaker( '87', 'Jersey City - Hoboken', 1));
-  routes.push( new RouteMaker( '88', 'N Bergen-Jersey City-JournSq', 1));
-  routes.push( new RouteMaker( '89', 'North Bergen - Hoboken', 1));
-  routes.push( new RouteMaker( '90', 'Grove Street Crosstown', 1));
-  routes.push( new RouteMaker( '92', 'Orange Crosstown', 1));
-  routes.push( new RouteMaker( '94', 'Stuyvesant Crosstown', 1));
-  routes.push( new RouteMaker( '95', 'Watchung - Newark', 1));
-  routes.push( new RouteMaker( '96', '18th Street Crosstown', 1));
-  routes.push( new RouteMaker( '97', 'East Orange - Montclair', 1));
-  routes.push( new RouteMaker( '99', 'Clifton Avenue Crosstown', 1));
-  routes.push( new RouteMaker( '107', 'Irvington - New York', 1));
-  routes.push( new RouteMaker( '108', 'Newark - New York', 1));
-  routes.push( new RouteMaker( '111', 'New York-IKEA-Jersey Gardens', 1));
-  routes.push( new RouteMaker( '112', 'Clark - New York', 1));
-  routes.push( new RouteMaker( '113', 'Dunellen - New York', 1));
-  routes.push( new RouteMaker( '114', 'Bridgewater - New York', 1));
-  routes.push( new RouteMaker( '115', 'Rahway - New York', 1));
-  routes.push( new RouteMaker( '116', 'Perth Amboy - New York', 1));
-  routes.push( new RouteMaker( '117', 'Somerville - New York Exp', 1));
-  routes.push( new RouteMaker( '119', 'Bayonne-Jersey City-NY', 1));
-  routes.push( new RouteMaker( '120', 'Bayonne - New York Downtown', 1));
-  routes.push( new RouteMaker( '121', 'North Bergen - New York', 1));
-  routes.push( new RouteMaker( '122', 'Secaucus - New York', 1));
-  routes.push( new RouteMaker( '123', 'Jersey City-Union City-NY', 1));
-  routes.push( new RouteMaker( '124', 'Secaucus - New York', 1));
-  routes.push( new RouteMaker( '125', 'Jersey City-Journal Sq-NY', 1));
-  routes.push( new RouteMaker( '126', 'Hoboken - New York', 1));
-  routes.push( new RouteMaker( '127', 'Ridgefield-Union City-NY', 1));
-  routes.push( new RouteMaker( '128', 'North Bergen-Blvd East-NY', 1));
-  routes.push( new RouteMaker( '129', 'Secaucus-Union City-New York', 1));
-  routes.push( new RouteMaker( '130', 'Lakewood-NY-Union Hill Exp', 1));
-  routes.push( new RouteMaker( '131', 'Sayreville - New York', 1));
-  routes.push( new RouteMaker( '132', 'Lakewood-NY-GordonsCornerExp', 1));
-  routes.push( new RouteMaker( '133', 'Old Bridge-Aberdeen-New York', 1));
-  routes.push( new RouteMaker( '135', 'Freehold-Matawan-New York', 1));
-  routes.push( new RouteMaker( '136', 'Lakewood-NY-Freehold Mall Ex', 1));
-  routes.push( new RouteMaker( '137', 'Toms River - New York', 1));
-  routes.push( new RouteMaker( '138', 'Old Bridge-East Brunswick-NY', 1));
-  routes.push( new RouteMaker( '139', 'Lakewood-Old Bridge-NY', 1));
-  routes.push( new RouteMaker( '144', 'Elmwood Park-Hackensack-NY', 1));
-  routes.push( new RouteMaker( '145', 'Fair Lawn - New York', 1));
-  routes.push( new RouteMaker( '148', 'Midland Park - New York', 1));
-  routes.push( new RouteMaker( '151', 'Paterson - New York Express', 1));
-  routes.push( new RouteMaker( '153', 'Fairview - Fort Lee - NY', 1));
-  routes.push( new RouteMaker( '154', 'Fort Lee-Palisades Park-NY', 1));
-  routes.push( new RouteMaker( '155', 'Bogota-Ridgefield Park-NY', 1));
-  routes.push( new RouteMaker( '156', 'Englewood Cliffs-Fort Lee-NY', 1));
-  routes.push( new RouteMaker( '157', 'Teaneck-Ridgefield Park-NY', 1));
-  routes.push( new RouteMaker( '158', 'Fort Lee-Edgewater-New York', 1));
-  routes.push( new RouteMaker( '159', 'Fort Lee-New York', 1));
-  routes.push( new RouteMaker( '160', 'Elmwood Park-Wallington-NY', 1));
-  routes.push( new RouteMaker( '161', 'Paterson-Passaic-New York', 1));
-  routes.push( new RouteMaker( '162', 'Maywood - New York', 1));
-  routes.push( new RouteMaker( '163', 'Ridgewood - New York', 1));
-  routes.push( new RouteMaker( '164', 'Midland Park-Fair Lawn-NY', 1));
-  routes.push( new RouteMaker( '165', 'Westwood - New York', 1));
-  routes.push( new RouteMaker( '166', 'Cresskill - Bergenfield - NY', 1));
-  routes.push( new RouteMaker( '167', 'Harrington Park-Teaneck-NY', 1));
-  routes.push( new RouteMaker( '168', 'Paramus - New York', 1));
-  routes.push( new RouteMaker( '171', 'Paterson - New York (GWB)', 1));
-  routes.push( new RouteMaker( '175', 'Ridgewood - New York (GWB)', 1));
-  routes.push( new RouteMaker( '177', 'HarringtonPk-NewMilford-NY X', 1));
-  routes.push( new RouteMaker( '178', 'Hackensack-Englewood-NY(GWB)', 1));
-  routes.push( new RouteMaker( '181', 'Union City - New York (GWB)', 1));
-  routes.push( new RouteMaker( '182', 'Hackensack - New York (GWB)', 1));
-  routes.push( new RouteMaker( '186', 'Dumont - New York (GWB)', 1));
-  routes.push( new RouteMaker( '188', 'West New York-New York(GWB)', 1));
-  routes.push( new RouteMaker( '190', 'Paterson-Secaucus-New York', 1));
-  routes.push( new RouteMaker( '191', 'Willowbrook-Montclair-NY', 1));
-  routes.push( new RouteMaker( '192', 'Clifton - New York', 1));
-  routes.push( new RouteMaker( '193', 'Willowbrook - New York', 1));
-  routes.push( new RouteMaker( '194', 'Stockholm-West Milford-NY', 1));
-  routes.push( new RouteMaker( '195', 'Willowbrook-Cedar Grove-NY', 1));
-  routes.push( new RouteMaker( '196', 'Warwick-Ringwood-New York', 1));
-  routes.push( new RouteMaker( '197', 'Warwick - Wayne - New York', 1));
-  routes.push( new RouteMaker( '198', 'Wayne-WilliamPatersonUniv-NY', 1));
-  routes.push( new RouteMaker( '199', 'Clifton-Lyndhurst-New York', 1));
-  routes.push( new RouteMaker( '250', 'GO25 Go Bus (Springfield Ave BR)', 1));
-  routes.push( new RouteMaker( '258', 'GO28 Nwk Airport-Nwk-Bloomfield', 1));
-  routes.push( new RouteMaker( '308', 'Six Flags Great Adv-New York', 1));
-  routes.push( new RouteMaker( '313', 'Cape May-Wildwood-Phila', 1));
-  routes.push( new RouteMaker( '315', 'Cape May-Wildwood-Phila', 1));
-  routes.push( new RouteMaker( '316', 'Cape May-Wildwood-Phila Exp', 1));
-  routes.push( new RouteMaker( '317', 'Asbury Park-Fort Dix-Phila', 1));
-  routes.push( new RouteMaker( '319', 'NY-Atlantic City-Cape ', 1));
-  routes.push( new RouteMaker( '320', 'Mill Creek-N Bergen P/R-NY', 1));
-  routes.push( new RouteMaker( '321', 'Vince Lombardi Park/Ride-NY', 1));
-  routes.push( new RouteMaker( '324', 'Wayne Rt 23 Transit Ctr-NY X', 1));
-  routes.push( new RouteMaker( '329', 'Harmon Cove-SecaucusJunction', 1));
-  routes.push( new RouteMaker( '346', 'Princeton Rail Shuttle Servi', 1));
-  routes.push( new RouteMaker( '361', 'Newark Express', 1));
-  routes.push( new RouteMaker( '375', 'Springfield Ave Line Express', 1));
-  routes.push( new RouteMaker( '378', 'Newark - Secaucus Express', 1));
-  routes.push( new RouteMaker( '400', 'Sicklerville - Philadelphia', 1));
-  routes.push( new RouteMaker( '401', 'Salem - Philadelphia', 1));
-  routes.push( new RouteMaker( '402', 'Pennsville - Philadelphia', 1));
-  routes.push( new RouteMaker( '403', 'Camden-Lindenwold-Turnersvil', 1));
-  routes.push( new RouteMaker( '404', 'CherryHillMall-Pennsauken-Ph', 1));
-  routes.push( new RouteMaker( '405', 'Camden-Merchantville-Cherry ', 1));
-  routes.push( new RouteMaker( '406', 'Berlin-Marlton-Philadelphia', 1));
-  routes.push( new RouteMaker( '407', 'Cmdn-Mrchntville-MorstwnMall', 1));
-  routes.push( new RouteMaker( '408', 'Millville - Philadelphia', 1));
-  routes.push( new RouteMaker( '409', 'Trenton-Willingboro-Phila', 1));
-  routes.push( new RouteMaker( '410', 'Bridgeton - Philadelphia', 1));
-  routes.push( new RouteMaker( '412', 'Sewell-Glassboro-Phila', 1));
-  routes.push( new RouteMaker( '413', 'Camden-MountHolly-Burlington', 1));
-  routes.push( new RouteMaker( '414', 'Philadelphia - Moorestown', 1));
-  routes.push( new RouteMaker( '417', 'Mt. Holly-Willingboro-Phila', 1));
-  routes.push( new RouteMaker( '418', 'Trenton Express', 1));
-  routes.push( new RouteMaker( '419', 'Cmdn-Rt73/Pennsauken St-Burl', 1));
-  routes.push( new RouteMaker( '450', 'CherryHillMal-Audubon-Camden', 1));
-  routes.push( new RouteMaker( '451', 'Camden-Voorhees Town Center', 1));
-  routes.push( new RouteMaker( '452', 'Camden - 36th St. Station', 1));
-  routes.push( new RouteMaker( '453', 'Ferry Avenue PATCO - Camden', 1));
-  routes.push( new RouteMaker( '455', 'CherryHillMall-Wdbury-Paulsb', 1));
-  routes.push( new RouteMaker( '457', 'Moorestown Mall - Camden', 1));
-  routes.push( new RouteMaker( '459', 'VoorheesTC-CamdenCC-Avandale', 1));
-  routes.push( new RouteMaker( '463', 'Woodbury-Avandale P/R', 1));
-  routes.push( new RouteMaker( '468', 'Penns Grove-Salem-Woodstown', 1));
-  routes.push( new RouteMaker( '501', 'AtlanticCity-Brigantine Beac', 1));
-  routes.push( new RouteMaker( '502', 'Atl City-HamiltonMall-Atl/CC', 1));
-  routes.push( new RouteMaker( '504', 'BngalwPk-ChlseaHgts-VntrPlz', 1));
-  routes.push( new RouteMaker( '505', 'Atl City-Margate-Longport', 1));
-  routes.push( new RouteMaker( '507', 'Atlantic City - Ocean City', 1));
-  routes.push( new RouteMaker( '508', 'Atl City-StocktonColl-HamMal', 1));
-  routes.push( new RouteMaker( '509', 'Atl City-SomersPt-Ocean City', 1));
-  routes.push( new RouteMaker( '510', 'Cape May - Wildwood Shuttle', 1));
-  routes.push( new RouteMaker( '551', 'Philadelphia - Atlantic City', 1));
-  routes.push( new RouteMaker( '552', 'Cape May - Atlantic City', 1));
-  routes.push( new RouteMaker( '553', 'Upper Deerfield-Atl City', 1));
-  routes.push( new RouteMaker( '554', 'Lindenwold-PATCO-Atl City', 1));
-  routes.push( new RouteMaker( '559', 'Lakewood - Atlantic City', 1));
-  routes.push( new RouteMaker( '600', 'Trenton - Plainsboro ', 1));
-  routes.push( new RouteMaker( '601', 'Coll of NJ-Trenton-Ham MktPl', 1));
-  routes.push( new RouteMaker( '603', 'Mercer Mall-Ham Sq-Ham MktPl', 1));
-  routes.push( new RouteMaker( '605', 'Montgomery-Princeton-QBMall', 1));
-  routes.push( new RouteMaker( '606', 'Princeton-Mrcrville-HamMktPl', 1));
-  routes.push( new RouteMaker( '607', 'Ewing-Trenton-Indep Plz', 1));
-  routes.push( new RouteMaker( '608', 'Hamilton - West Trenton', 1));
-  routes.push( new RouteMaker( '609', 'Ewing - Quaker Bridge Mall', 1));
-  routes.push( new RouteMaker( '611', 'Trenton-RiverViewPlz-Circ', 1));
-  routes.push( new RouteMaker( '612', 'Lwrnce-WWindsor-Prnceton Jct', 1));
-  routes.push( new RouteMaker( '613', 'MercerMall-Yardville-Ham Mkt', 1));
-  routes.push( new RouteMaker( '619', 'Ewing-Mercer County College', 1));
-  routes.push( new RouteMaker( '624', 'Pennington - East Trenton', 1));
-  routes.push( new RouteMaker( '702', 'Paterson - Elmwood Park', 1));
-  routes.push( new RouteMaker( '703', 'Haledon-Paterson-East Ruther', 1));
-  routes.push( new RouteMaker( '704', 'Paterson - Willowbrook Mall', 1));
-  routes.push( new RouteMaker( '705', 'Passaic - Willowbrook Mall', 1));
-  routes.push( new RouteMaker( '707', 'Paterson - Paramus', 1));
-  routes.push( new RouteMaker( '709', 'Bloomfield-Passaic-Paramus', 1));
-  routes.push( new RouteMaker( '712', 'Hackensack-Paterson-Willowbr', 1));
-  routes.push( new RouteMaker( '722', 'Paterson - Paramus Park', 1));
-  routes.push( new RouteMaker( '744', 'Passaic - Paterson - Wayne', 1));
-  routes.push( new RouteMaker( '746', 'Ridgewood - Paterson', 1));
-  routes.push( new RouteMaker( '748', 'Paterson - Wayne', 1));
-  routes.push( new RouteMaker( '751', 'Paramus-Cliffside Park-Edgew', 1));
-  routes.push( new RouteMaker( '752', 'Oakland-Ridgewood-Hackensack', 1));
-  routes.push( new RouteMaker( '753', 'New Milford - Paramus', 1));
-  routes.push( new RouteMaker( '755', 'Paramus-Fort Lee-Edgewater', 1));
-  routes.push( new RouteMaker( '756', 'EnglewoodCliffs-FortLee-Para', 1));
-  routes.push( new RouteMaker( '758', 'Passaic - Paramus Park', 1));
-  routes.push( new RouteMaker( '762', 'Hackensack-NMilford-Paramus', 1));
-  routes.push( new RouteMaker( '770', 'Paterson - Hackensack', 1));
-  routes.push( new RouteMaker( '772', 'Paramus-Hackensack-Meadowlan', 1));
-  routes.push( new RouteMaker( '780', 'Passaic-Hackensack-Englewood', 1));
-  routes.push( new RouteMaker( '801', 'Metropark - JFK Hospital', 1));
-  routes.push( new RouteMaker( '802', 'Metropark - Rt. 1/Green St.', 1));
-  routes.push( new RouteMaker( '803', 'Metropark - Woodbridge Cente', 1));
-  routes.push( new RouteMaker( '804', 'Metropark - Wood Ave.', 1));
-  routes.push( new RouteMaker( '805', 'Metropark - Ford Ave.', 1));
-  routes.push( new RouteMaker( '810', 'New Brunswick-Woodbridge Ctr', 1));
-  routes.push( new RouteMaker( '811', 'New Brunswick - South River', 1));
-  routes.push( new RouteMaker( '813', 'Perth Amboy-Middlesex CC', 1));
-  routes.push( new RouteMaker( '814', 'N Brunswick-NewBrnswck-MidCC', 1));
-  routes.push( new RouteMaker( '815', 'NBrnswick-EBrnswick-WdbrdgeC', 1));
-  routes.push( new RouteMaker( '817', 'Perth Amboy-Campbell\'s Junct', 1));
-  routes.push( new RouteMaker( '818', 'NBrnswick-EBrnswick-OldBrdg ', 1));
-  routes.push( new RouteMaker( '819', 'Piscataway-Plainfield-Metuch', 1));
-  routes.push( new RouteMaker( '822', 'Plainfield-North Plainfield', 1));
-  routes.push( new RouteMaker( '830', 'Asbury Prk-Pt Pleasant Beach', 1));
-  routes.push( new RouteMaker( '831', 'Red Bank-MonMall-LongBranch', 1));
-  routes.push( new RouteMaker( '832', 'Red Bank-MonMall-Asbury Prk', 1));
-  routes.push( new RouteMaker( '833', 'Red Bank-Freehold-Free Mall', 1));
-  routes.push( new RouteMaker( '834', 'Red Bank - Highlands', 1));
-  routes.push( new RouteMaker( '835', 'Red Bank - Sea Bright', 1));
-  routes.push( new RouteMaker( '836', 'AsbryPrk-Free-RaceMal-Centra', 1));
-  routes.push( new RouteMaker( '837', 'LongBranch-AsburyPrk-Seaview', 1));
-  routes.push( new RouteMaker( '871', 'Morristown-Boonton-Willowbro', 1));
-  routes.push( new RouteMaker( '872', 'Morristown-Rt.10-Livingston', 1));
-  routes.push( new RouteMaker( '873', 'Greystone-Morristown-Livings', 1));
-  routes.push( new RouteMaker( '874', 'Morristown - Willowbrook', 1));
-  routes.push( new RouteMaker( '875', 'Morristown-Dover-Roxbury', 1));
-  routes.push( new RouteMaker( '880', 'Morristown-Dover-Rockaway', 1));
+  let seed = [
+    ["1", "Newark"],
+    ["2", "Jersey City-JournalSq-Secaucus"],
+    ["5", "Kinney"],
+    ["6", "Ocean Avenue - Journal Square"],
+    ["10", "Bayonne - Jersey City"],
+    ["11", "Newark - Willowbrook"],
+    ["13", "Broad Street - Clinton Avenue"],
+    ["21", "Main Street"],
+    ["22", "N Bergen-Union City-Hoboken"],
+    ["23", "N Bergen-Weehawken-Hoboken"],
+    ["25", "Springfield Avenue"],
+    ["26", "Irvington - Elizabeth"],
+    ["27", "Mount Prospect"],
+    ["28", "Nwk-MontclairUniv-Willowbrook"],
+    ["29", "Bloomfield Avenue"],
+    ["30", "North Arlington-Kearny-Newark"],
+    ["34", "Market Street"],
+    ["37", "Lyons Avenue"],
+    ["39", "Irvington - Newark"],
+    ["40", "Kearny - Jersey Gardens"],
+    ["41", "Park Avenue"],
+    ["48", "Elizabeth-Woodbridge-Perth Am"],
+    ["52", "Morris Avenue"],
+    ["56", "Elizabeth - Winfield"],
+    ["57", "Tremley"],
+    ["58", "Elizabeth - Kenilworth"],
+    ["59", "Plainfield - Newark"],
+    ["62", "Newark-Nwk Airport-Elizabeth"],
+    ["63", "Lakewood-JrsyCity-Weehawken X"],
+    ["64", "Lakewood-Jersey City-Weehawke"],
+    ["65", "Newark - Somerville"],
+    ["66", "Newark - Mountainside"],
+    ["67", "Toms River-Lakewood-Newark"],
+    ["68", "OldBridge-EBrunswick-JerseyC"],
+    ["70", "Newark - Livingston Mall"],
+    ["71", "Newark-West Caldwell"],
+    ["72", "Paterson-Bloomfield-Newark"],
+    ["73", "Newark - Orange - Livingston"],
+    ["74", "Paterson - Nutley - Newark"],
+    ["76", "Newark - Hackensack"],
+    ["78", "Newark - Secaucus"],
+    ["79", "Newark - Parsippany Express"],
+    ["80", "Greenville-JournalSq-Exchange"],
+    ["81", "Bayonne - Jersey City"],
+    ["82", "Union City-Jersy City-Exch Pl"],
+    ["83", "Hackensack-Jersy City-JournSQ"],
+    ["84", "N Bergen-Jersey City-JournSq"],
+    ["85", "Mill Crk-HarmonMeadow-Hbken"],
+    ["86", "Union City-JersyCity-NwprtMal"],
+    ["87", "Jersey City - Hoboken"],
+    ["88", "N Bergen-Jersey City-JournSq"],
+    ["89", "North Bergen - Hoboken"],
+    ["90", "Grove Street Crosstown"],
+    ["92", "Orange Crosstown"],
+    ["94", "Stuyvesant Crosstown"],
+    ["95", "Watchung - Newark"],
+    ["96", "18th Street Crosstown"],
+    ["97", "East Orange - Montclair"],
+    ["99", "Clifton Avenue Crosstown"],
+    ["107", "Irvington - New York"],
+    ["108", "Newark - New York"],
+    ["111", "New York-IKEA-Jersey Gardens"],
+    ["112", "Clark - New York"],
+    ["113", "Dunellen - New York"],
+    ["114", "Bridgewater - New York"],
+    ["115", "Rahway - New York"],
+    ["116", "Perth Amboy - New York"],
+    ["117", "Somerville - New York Exp"],
+    ["119", "Bayonne-Jersey City-NY"],
+    ["120", "Bayonne - New York Downtown"],
+    ["121", "North Bergen - New York"],
+    ["122", "Secaucus - New York"],
+    ["123", "Jersey City-Union City-NY"],
+    ["124", "Secaucus - New York"],
+    ["125", "Jersey City-Journal Sq-NY"],
+    ["126", "Hoboken - New York"],
+    ["127", "Ridgefield-Union City-NY"],
+    ["128", "North Bergen-Blvd East-NY"],
+    ["129", "Secaucus-Union City-New York"],
+    ["130", "Lakewood-NY-Union Hill Exp"],
+    ["131", "Sayreville - New York"],
+    ["132", "Lakewood-NY-GordonsCornerExp"],
+    ["133", "Old Bridge-Aberdeen-New York"],
+    ["135", "Freehold-Matawan-New York"],
+    ["136", "Lakewood-NY-Freehold Mall Ex"],
+    ["137", "Toms River - New York"],
+    ["138", "Old Bridge-East Brunswick-NY"],
+    ["139", "Lakewood-Old Bridge-NY"],
+    ["144", "Elmwood Park-Hackensack-NY"],
+    ["145", "Fair Lawn - New York"],
+    ["148", "Midland Park - New York"],
+    ["151", "Paterson - New York Express"],
+    ["153", "Fairview - Fort Lee - NY"],
+    ["154", "Fort Lee-Palisades Park-NY"],
+    ["155", "Bogota-Ridgefield Park-NY"],
+    ["156", "Englewood Cliffs-Fort Lee-NY"],
+    ["157", "Teaneck-Ridgefield Park-NY"],
+    ["158", "Fort Lee-Edgewater-New York"],
+    ["159", "Fort Lee-New York"],
+    ["160", "Elmwood Park-Wallington-NY"],
+    ["161", "Paterson-Passaic-New York"],
+    ["162", "Maywood - New York"],
+    ["163", "Ridgewood - New York"],
+    ["164", "Midland Park-Fair Lawn-NY"],
+    ["165", "Westwood - New York"],
+    ["166", "Cresskill - Bergenfield - NY"],
+    ["167", "Harrington Park-Teaneck-NY"],
+    ["168", "Paramus - New York"],
+    ["171", "Paterson - New York (GWB)"],
+    ["175", "Ridgewood - New York (GWB)"],
+    ["177", "HarringtonPk-NewMilford-NY X"],
+    ["178", "Hackensack-Englewood-NY(GWB)"],
+    ["181", "Union City - New York (GWB)"],
+    ["182", "Hackensack - New York (GWB)"],
+    ["186", "Dumont - New York (GWB)"],
+    ["188", "West New York-New York(GWB)"],
+    ["190", "Paterson-Secaucus-New York"],
+    ["191", "Willowbrook-Montclair-NY"],
+    ["192", "Clifton - New York"],
+    ["193", "Willowbrook - New York"],
+    ["194", "Stockholm-West Milford-NY"],
+    ["195", "Willowbrook-Cedar Grove-NY"],
+    ["196", "Warwick-Ringwood-New York"],
+    ["197", "Warwick - Wayne - New York"],
+    ["198", "Wayne-WilliamPatersonUniv-NY"],
+    ["199", "Clifton-Lyndhurst-New York"],
+    ["250", "Go Bus (Springfield Ave BR)"],
+    ["258", "Nwk Airport-Nwk-Bloomfield"],
+    ["313", "Cape May-Wildwood-Phila"],
+    ["315", "Cape May-Wildwood-Phila"],
+    ["317", "Asbury Park-Fort Dix-Phila"],
+    ["319", "NY-Atlantic City-Cape "],
+    ["320", "Mill Creek-N Bergen P/R-NY"],
+    ["321", "Vince Lombardi Park/Ride-NY"],
+    ["324", "Wayne Rt 23 Transit Ctr-NY X"],
+    ["329", "Harmon Cove-SecaucusJunction"],
+    ["346", "Princeton Rail Shuttle Servi"],
+    ["361", "Newark Express"],
+    ["364", "Ridgewood - Paramus Seasonal"],
+    ["372", "Bloomfield Seasonal Service"],
+    ["375", "Springfield Ave Line Express"],
+    ["378", "Newark - Secaucus Express"],
+    ["400", "Sicklerville - Philadelphia"],
+    ["401", "Salem - Philadelphia"],
+    ["402", "Pennsville - Philadelphia"],
+    ["403", "Camden-Lindenwold-Turnersvil"],
+    ["404", "CherryHillMall-Pennsauken-Ph"],
+    ["405", "Camden-Merchantville-Cherry "],
+    ["406", "Berlin-Marlton-Philadelphia"],
+    ["407", "Cmdn-Mrchntville-MorstwnMall"],
+    ["408", "Millville - Philadelphia"],
+    ["409", "Trenton-Willingboro-Phila"],
+    ["410", "Bridgeton - Philadelphia"],
+    ["412", "Sewell-Glassboro-Phila"],
+    ["413", "Camden-MountHolly-Burlington"],
+    ["414", "Philadelphia - Moorestown"],
+    ["417", "Mt. Holly-Willingboro-Phila"],
+    ["418", "Trenton Express"],
+    ["419", "Cmdn-Rt73/Pennsauken St-Burl"],
+    ["450", "CherryHillMal-Audubon-Camden"],
+    ["451", "Camden-Voorhees Town Center"],
+    ["452", "Camden - 36th St. Station"],
+    ["453", "Ferry Avenue PATCO - Camden"],
+    ["455", "CherryHillMall-Wdbury-Paulsb"],
+    ["457", "Moorestown Mall - Camden"],
+    ["459", "VoorheesTC-CamdenCC-Avandale"],
+    ["460", "Camden Seasonal Service"],
+    ["463", "Woodbury-Avandale P/R"],
+    ["468", "Penns Grove-Salem-Woodstown"],
+    ["501", "AtlanticCity-Brigantine Beac"],
+    ["502", "Atl City-HamiltonMall-Atl/CC"],
+    ["504", "BngalwPk-ChlseaHgts-VntrPlz"],
+    ["505", "Atl City-Margate-Longport"],
+    ["507", "Atlantic City - Ocean City"],
+    ["508", "Atl City-StocktonColl-HamMal"],
+    ["509", "Atl City-SomersPt-Ocean City"],
+    ["551", "Philadelphia - Atlantic City"],
+    ["552", "Cape May - Atlantic City"],
+    ["553", "Upper Deerfield-Atl City"],
+    ["554", "Lindenwold-PATCO-Atl City"],
+    ["555", "Phila-Avandale Park&Ride"],
+    ["559", "Lakewood - Atlantic City"],
+    ["600", "Trenton - Plainsboro "],
+    ["601", "Coll of NJ-Trenton-Ham MktPl"],
+    ["603", "Mercer Mall-Ham Sq-Ham MktPl"],
+    ["605", "Montgomery-Princeton-QBMall"],
+    ["606", "Princeton-Mrcrville-HamMktPl"],
+    ["607", "Ewing-Trenton-Indep Plz"],
+    ["608", "Hamilton - West Trenton"],
+    ["609", "Ewing - Quaker Bridge Mall"],
+    ["610", "Trenton Seasonal Service"],
+    ["611", "Trenton-RiverViewPlz-Circ"],
+    ["612", "Lwrnce-WWindsor-Prnceton Jct"],
+    ["613", "MercerMall-Yardville-Ham Mkt"],
+    ["619", "Ewing-Mercer County College"],
+    ["624", "Pennington - East Trenton"],
+    ["702", "Paterson - Elmwood Park"],
+    ["703", "Haledon-Paterson-East Ruther"],
+    ["704", "Paterson - Willowbrook Mall"],
+    ["705", "Passaic - Willowbrook Mall"],
+    ["707", "Paterson - Paramus"],
+    ["709", "Bloomfield-Passaic-Paramus"],
+    ["712", "Hackensack-Paterson-Willowbr"],
+    ["722", "Paterson - Paramus Park"],
+    ["744", "Passaic - Paterson - Wayne"],
+    ["746", "Ridgewood - Paterson"],
+    ["748", "Paterson - Wayne"],
+    ["751", "Paramus-Cliffside Park-Edgew"],
+    ["752", "Oakland-Ridgewood-Hackensack"],
+    ["753", "New Milford - Paramus"],
+    ["755", "Paramus-Fort Lee-Edgewater"],
+    ["756", "EnglewoodCliffs-FortLee-Para"],
+    ["758", "Passaic - Paramus Park"],
+    ["762", "Hackensack-NMilford-Paramus"],
+    ["770", "Paterson - Hackensack"],
+    ["772", "Paramus-Hackensack-Meadowlan"],
+    ["780", "Passaic-Hackensack-Englewood"],
+    ["801", "Metropark - JFK Hospital"],
+    ["802", "Metropark - Rt. 1/Green St."],
+    ["803", "Metropark - Woodbridge Cente"],
+    ["804", "Metropark - Wood Ave."],
+    ["805", "Metropark - Ford Ave."],
+    ["810", "New Brunswick-Woodbridge Ctr"],
+    ["811", "New Brunswick - South River"],
+    ["813", "Perth Amboy-Middlesex CC"],
+    ["814", "N Brunswick-NewBrnswck-MidCC"],
+    ["815", "NBrnswick-EBrnswick-WdbrdgeC"],
+    ["817", "Perth Amboy-Campbell\'s Junct"],
+    ["818", "NBrnswick-EBrnswick-OldBrdg "],
+    ["819", "Piscataway-Plainfield-Metuch"],
+    ["822", "Plainfield-North Plainfield"],
+    ["830", "Asbury Prk-Pt Pleasant Beach"],
+    ["831", "Red Bank-MonMall-LongBranch"],
+    ["832", "Red Bank-MonMall-Asbury Prk"],
+    ["834", "Red Bank - Highlands"],
+    ["836", "AsbryPrk-Free-RaceMal-Centra"],
+    ["837", "LongBranch-AsburyPrk-Seaview"],
+    ["838", "Freehold-Red Bank-Sea Bright"],
+    ["871", "Morristown-Boonton-Willowbro"],
+    ["872", "Morristown-Rt.10-Livingston"],
+    ["873", "Greystone-Morristown-Livings"],
+    ["874", "Morristown - Willowbrook"],
+    ["875", "Morristown-Dover-Roxbury"], ]
+
+  let routes = seed.map(RouteMaker)
 
   return routes;
 }

@@ -1,13 +1,15 @@
 app.factory('DashFactory', function($http){
   return {
-    getEtaData: function(route, stop){
-      let url = '/apiNJT/getStopPredictionsETA.jsp?route='+route +'&stop=' + stop;
+    getEtaData: function(route, stop, dirName){
+      console.log('factory getEtaData', route, stop, dirName)
+      let dir = encodeURIComponent(dirName)
+      let url = `/apiNJT/getStopPredictionsETA.jsp?route=${route}&stop=${stop}&direction=${dir}`;
+      console.log('eta url', url)
 
       return $http.get(url)
       .then(function (response) {
         if (!response.data) {throw new Error(response.status);}
         let parsedRes = xmlParse(response.data);
-        // console.log('etas: ',JSON.stringify(response.data));
         let times = parsedRes.getElementsByTagName('pt');
         let text = parsedRes.getElementsByTagName('pu');
         let etaList = [];
@@ -26,6 +28,7 @@ app.factory('DashFactory', function($http){
     },
 
     getDirs: function(route, dirName) {
+      console.log('factory getDirs', route, dirName)
       let url = '/apiNJTmap/getDirectionsStopsForRoute.jsp?route='+route;
       if (dirName) {
         url += '&direction='+encodeURIComponent(dirName);
@@ -47,6 +50,13 @@ app.factory('DashFactory', function($http){
       .catch(function(err){
         console.log('getDirs',JSON.stringify(err));
       });
+    },
+
+    getEtaUnit: function(eta) {
+      let unit = '';
+      if (eta === 1) {unit = ' minute';}
+      else if (!isNaN(+eta)) {unit = ' minutes';}
+      return unit;
     }
   };
 
@@ -59,7 +69,6 @@ app.factory('DashFactory', function($http){
     let stops = [];
     let nameArray = inputArray.getElementsByTagName('name');
     let idArray = inputArray.getElementsByTagName('id');
-    // console.log(idArray[0].innerHTML)
     for (let i = 1; i < nameArray.length; i++) {
       stops.push({
         name: nameArray[i].innerHTML,
@@ -68,4 +77,5 @@ app.factory('DashFactory', function($http){
     }
     return stops;
   }
+
 });
