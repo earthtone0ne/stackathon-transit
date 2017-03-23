@@ -11,9 +11,9 @@ app.controller('DashCtrl', function($scope,DashFactory) {
         if (isNaN(+curr)) {return 0;}
         else {return Math.min(prior, curr);}
       },$scope.alarmingTime+1);
-      let mins = $scope.etas.nextEta > 1 ? 'minutes' : 'minute!'
       if($scope.etas.nextEta <= $scope.alarmingTime){
-        alert(`Next bus in\n ${$scope.etas.nextEta} ${mins}`);
+        let mins = $scope.etas.nextEta === 1 ? 'minute' | 'minutes'
+        alert(`Next bus in ${$scope.etas.nextEta} ${mins}!`);
       }
     })
     .catch(function(err){console.log(JSON.stringify(err));});
