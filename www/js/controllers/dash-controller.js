@@ -1,4 +1,4 @@
-app.controller('DashCtrl', function($scope,DashFactory) {
+app.controller('DashCtrl', function($scope, DashFactory) {
   $scope.busRoutes = initialRouteSeeder();
   $scope.alarmingTime = 4;
   $scope.stopId = null;
@@ -8,12 +8,12 @@ app.controller('DashCtrl', function($scope,DashFactory) {
     .then(function(results){
       $scope.etas = results;
       $scope.etas.nextEta = results.reduce(function(prior,curr){
-        if (isNaN(+curr)) {return 0;}
+        if (curr.toLowerCase() === 'approaching') {return 0;}
         else {return Math.min(prior, curr);}
       },$scope.alarmingTime+1);
-      if($scope.etas.nextEta <= $scope.alarmingTime){
-        let mins = $scope.etas.nextEta === 1 ? 'minute' | 'minutes'
-        alert(`Next bus in ${$scope.etas.nextEta} ${mins}!`);
+      if($scope.etas.length && $scope.etas.nextEta <= $scope.alarmingTime){
+        let minUnit = DashFactory.getEtaUnit($scope.etas.nextEta);
+        alert(`Next bus in ${$scope.etas.nextEta}${minUnit}!`);
       }
     })
     .catch(function(err){console.log(JSON.stringify(err));});
@@ -43,6 +43,7 @@ app.controller('DashCtrl', function($scope,DashFactory) {
     $scope.getDirs();
   };
   $scope.stopSelected= function(stop){
+    if (!stop) {return;}
     $scope.selectedStop = stop;
     $scope.stopId=stop.id;
     $scope.getEtaData($scope.route, $scope.stopId, $scope.selectedDir);

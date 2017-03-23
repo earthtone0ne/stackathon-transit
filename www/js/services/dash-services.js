@@ -10,7 +10,6 @@ app.factory('DashFactory', function($http){
       .then(function (response) {
         if (!response.data) {throw new Error(response.status);}
         let parsedRes = xmlParse(response.data);
-        // console.log('etas: ',JSON.stringify(response.data));
         let times = parsedRes.getElementsByTagName('pt');
         let text = parsedRes.getElementsByTagName('pu');
         let etaList = [];
@@ -21,7 +20,6 @@ app.factory('DashFactory', function($http){
             etaList.push(times[i].innerHTML);
           }
         }
-        console.log(etaList)
         return etaList;
       })
       .catch(function(err) {
@@ -52,6 +50,13 @@ app.factory('DashFactory', function($http){
       .catch(function(err){
         console.log('getDirs',JSON.stringify(err));
       });
+    },
+
+    getEtaUnit: function(eta) {
+      let unit = '';
+      if (eta === 1) {unit = ' minute';}
+      else if (!isNaN(+eta)) {unit = ' minutes';}
+      return unit;
     }
   };
 
@@ -64,7 +69,6 @@ app.factory('DashFactory', function($http){
     let stops = [];
     let nameArray = inputArray.getElementsByTagName('name');
     let idArray = inputArray.getElementsByTagName('id');
-    // console.log(idArray[0].innerHTML)
     for (let i = 1; i < nameArray.length; i++) {
       stops.push({
         name: nameArray[i].innerHTML,
@@ -73,4 +77,5 @@ app.factory('DashFactory', function($http){
     }
     return stops;
   }
+
 });
