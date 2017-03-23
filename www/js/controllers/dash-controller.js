@@ -4,15 +4,16 @@ app.controller('DashCtrl', function($scope,DashFactory) {
   $scope.stopId = null;
 
   $scope.getEtaData = function() {
-    return DashFactory.getEtaData($scope.route.num,$scope.stopId)
+    return DashFactory.getEtaData($scope.route.num,$scope.stopId, $scope.selectedDir)
     .then(function(results){
       $scope.etas = results;
       $scope.etas.nextEta = results.reduce(function(prior,curr){
         if (isNaN(+curr)) {return 0;}
         else {return Math.min(prior, curr);}
       },$scope.alarmingTime+1);
+      let mins = $scope.etas.nextEta > 1 ? 'minutes' : 'minute!'
       if($scope.etas.nextEta <= $scope.alarmingTime){
-        alert('Next bus in\n'+ $scope.etas.nextEta + ' minutes');
+        alert(`Next bus in\n ${$scope.etas.nextEta} ${mins}`);
       }
     })
     .catch(function(err){console.log(JSON.stringify(err));});
@@ -23,7 +24,6 @@ app.controller('DashCtrl', function($scope,DashFactory) {
     .then(function(result){
       $scope.dirs=result.dirs;
       $scope.stops=result.stops[0];
-      // console.log('ln 28, stops', $scope.stops[0]);
     })
     .catch(function(err){console.log(err);});
   };
@@ -45,7 +45,7 @@ app.controller('DashCtrl', function($scope,DashFactory) {
   $scope.stopSelected= function(stop){
     $scope.selectedStop = stop;
     $scope.stopId=stop.id;
-    $scope.getEtaData($scope.route, $scope.stopId)
+    $scope.getEtaData($scope.route, $scope.stopId, $scope.selectedDir);
   }
-// var url = '/apiNJT/getStopPredictionsETA.jsp?route=190&stop=26804';
+
 });

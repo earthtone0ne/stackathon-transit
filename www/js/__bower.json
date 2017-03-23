@@ -16,8 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-moment": "^0.10.3",
-    "moment": "^2.14.1"
+    
   },
   "resolutions": {
     "moment": ">=2.8.0 <2.11.0"

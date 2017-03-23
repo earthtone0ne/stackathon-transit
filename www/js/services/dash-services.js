@@ -1,7 +1,10 @@
 app.factory('DashFactory', function($http){
   return {
-    getEtaData: function(route, stop){
-      let url = '/apiNJT/getStopPredictionsETA.jsp?route='+route +'&stop=' + stop;
+    getEtaData: function(route, stop, dirName){
+      console.log('factory getEtaData', route, stop, dirName)
+      let dir = encodeURIComponent(dirName)
+      let url = `/apiNJT/getStopPredictionsETA.jsp?route=${route}&stop=${stop}&direction=${dir}`;
+      console.log('eta url', url)
 
       return $http.get(url)
       .then(function (response) {
@@ -18,6 +21,7 @@ app.factory('DashFactory', function($http){
             etaList.push(times[i].innerHTML);
           }
         }
+        console.log(etaList)
         return etaList;
       })
       .catch(function(err) {
@@ -26,6 +30,7 @@ app.factory('DashFactory', function($http){
     },
 
     getDirs: function(route, dirName) {
+      console.log('factory getDirs', route, dirName)
       let url = '/apiNJTmap/getDirectionsStopsForRoute.jsp?route='+route;
       if (dirName) {
         url += '&direction='+encodeURIComponent(dirName);
